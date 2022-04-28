@@ -35,7 +35,21 @@ switch($action){
         mysqli_close($connect);
         header("location:header.php?action=departments.php");
         break;
-        
+    case 'insurance':
+        if(isset($_POST['name_insurance'])){
+            $name_insurance = $_POST['name_insurance'];
+        }
+        if(isset($_POST['money_insurance'])){
+            $money_insurance = $_POST['money_insurance'];
+        }
+        //Kết nối DB
+        require 'conn.php';
+        //sql
+        $sql = "UPDATE baoHiem SET loaiBaohiem = '$name_insurance', tienBaohiem = '$money_insurance' WHERE id = $id";
+        mysqli_query($connect, $sql);
+        mysqli_close($connect);
+        header("location:header.php?action=contract.php");
+        break;    
 }
     
     

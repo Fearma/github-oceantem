@@ -18,10 +18,10 @@
          ?> 
          <tr>
              <td><?php echo $each['id'] ?></td>
-             <td><?php echo $each['loaiBaoHiem'] ?></td>
-             <td><?php echo $each['tienBaoHiem'] ?></td>
+             <td><?php echo $each['loaiBaohiem'] ?></td>
+             <td><?php echo $each['tienBaohiem']." %" ?></td>
              <td><a href="update_department.php?id=<?php echo $each['id']?>&action=insurance">Sửa</a></td>
-             <td><a href="update_department.php?id=<?php echo $each['id']?>&action=insurance">Xóa</a></td>
+             <td><a href="delete_department.php?id=<?php echo $each['id']?>&action=insurance">Xóa</a></td>
          </tr>
         <?php }
         mysqli_close($connect);

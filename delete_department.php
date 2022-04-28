@@ -5,16 +5,22 @@
         require 'conn.php' ;
         switch( $action){
                 case 'department':
-                $sql = "DELETE FROM phongBan WHERE id = $id";
-                mysqli_query($connect, $sql);
-                mysqli_close($connect);
-                header("location:header.php?action=departments.php");
+                        $sql = "DELETE FROM phongBan WHERE id = $id";
+                        mysqli_query($connect, $sql);
+                        mysqli_close($connect);
+                        header("location:header.php?action=departments.php");
                 break;
                 case 'position':
-                $sql = "DELETE FROM chucVu WHERE id = $id";
-                mysqli_query($connect, $sql);
-                mysqli_close($connect);
-                header("location:header.php?action=departments.php");
+                        $sql = "DELETE FROM chucVu WHERE id = $id";
+                        mysqli_query($connect, $sql);
+                        mysqli_close($connect);
+                        header("location:header.php?action=departments.php");
+                break;
+                case 'insurance':
+                        $sql = "DELETE FROM baoHiem WHERE id = $id";
+                        mysqli_query($connect, $sql);
+                        mysqli_close($connect);
+                        header("location:header.php?action=contract.php");
                 break;
         }
         

@@ -12,7 +12,7 @@ section, .content__sumary, .content__sumary__items__title{
 }
 .content__sumary__items{
     min-width: 30%;
-    max-width: 45% !important;
+    max-width: 45% ;
 }
 .content__sumary{
     margin: 50px;
