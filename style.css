@@ -1,0 +1,17 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+a:hover{
+    text-decoration: none;
+}
+.title{
+    margin: 20px 0px 20px 50px;
+}
