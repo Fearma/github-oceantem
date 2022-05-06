@@ -41,6 +41,53 @@
         <?php }
         mysqli_close($connect);
          ?>
+         
      </table>   
     </div>
+    <div>  
+        <form action="header.php" method="get">
+        <input type="hidden" name="action" value="departments.php">
+    <?php 
+        $search="";
+        if(isset($_GET["search"])){
+            $search=$_GET["search"];
+                }
+    ?>
+    Search: <input type="text" name="search" value="<?php echo $search;?>" placeholder="Tìm phòng ban">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <a href="header.php?action=departments.php" >Xem tất cả</a>
+    <?php
+            require "conn.php";
+            //Từ đây nữa nhé thêm chỗ WHERE tên_cột LIKE '%$search%'"
+            $sql= "SELECT * from phongBan WHERE tenPhong  LIKE '%$search%'";
+            ?> 
+                 <?php 
+        mysqli_close($connect);
+         ?>
+
+         </div>
+         <div>  
+        <form action="header.php" method="get">
+        <input type="hidden" name="action" value="department.php">
+    <?php 
+        $search="";
+        if(isset($_GET["search"])){
+            $search=$_GET["search"];
+                }
+    ?>
+    Search: <input type="text" name="search" value="<?php echo $search;?>" placeholder="Tìm chức vụ">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <a href="header.php?action=departments.php" >Xem tất cả</a>
+    <?php
+            require "conn.php";
+            //Từ đây nữa nhé thêm chỗ WHERE tên_cột LIKE '%$search%'"
+            $sql= "SELECT * from chucVu WHERE tenChucVu  LIKE '%$search%'";
+            ?> 
+                 <?php 
+        mysqli_close($connect);
+         ?>
+
+         </div>
 <div>
