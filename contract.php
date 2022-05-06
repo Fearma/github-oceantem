@@ -2,6 +2,20 @@
 <div class="content__sumary">
     <div class="content__sumary__items">
      <a href="created_department.php?action=insurance">Tạo bảo hiểm mới</a>
+     <!--search từ đây-->
+    <form action="header.php" method="get">
+    <input type="hidden" name="action" value="contract.php">
+    <?php 
+    $search="";
+    if(isset($_GET["search"])){
+        $search=$_GET["search"];
+    }
+    ?>
+    Search: <input type="text" name="search" value="<?php echo $search;?>" placeholder="Tìm loại bảo hiểm">
+    <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </form>
+    <a href="header.php?action=contract.php" >Xem tất cả</a>
+    <!--đến đây(dưới còn nữa)-->
      <table border="1" width="100%">
          <tr>
              <td>Mã</td>
@@ -12,7 +26,8 @@
          </tr>
          <?php
             require "conn.php";
-            $sql= "SELECT * from BaoHiem";
+            //Từ đây nữa nhé thêm chỗ WHERE tên_cột LIKE '%$search%'"
+            $sql= "SELECT * from BaoHiem WHERE loaiBaohiem LIKE '%$search%'";
             $result= mysqli_query($connect,$sql); 
             foreach($result as $each){
          ?> 
